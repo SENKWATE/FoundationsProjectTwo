@@ -3,8 +3,8 @@
 from components import Store, Product
 
 stores = []
-def create_product(store, name, description, price):
-    product = Product(name, description, price)
+def create_product(store,store_name, name, description, price):
+    product = Product(store_name,name, description, price)
     store.add_product(product)
 
 zara = Store("Zara")
@@ -13,12 +13,12 @@ apple = Store("Apple")
 stores.append(zara)
 stores.append(nike)
 stores.append(apple)
-create_product(zara, "Nice Yellow Top", "A nice yellow top.", 30)
-create_product(zara, "Pants", "100 percent cotton", 25)
-create_product(nike, "Running Shoes", "Shoes for running.", 15)
-create_product(nike, "Style Shoes", "Stylish shoes.", 20)
-create_product(apple, "iPhone X", "256GB Space Gray", 310)
-create_product(apple, "iPhone 5s", "128GB Silver", 250)
+create_product(zara,zara.name, "Nice Yellow Top", "A nice yellow top.", 30)
+create_product(zara,zara.name, "Pants", "100 percent cotton", 25)
+create_product(nike,nike.name, "Running Shoes", "Shoes for running.", 15)
+create_product(nike,nike.name, "Style Shoes", "Stylish shoes.", 20)
+create_product(apple,apple.name, "iPhone X", "256GB Space Gray", 310)
+create_product(apple,apple.name, "iPhone 5s", "128GB Silver", 250)
 
 #############################################################################
 # To create a new store:
@@ -30,5 +30,6 @@ create_product(apple, "iPhone 5s", "128GB Silver", 250)
 
 pharmacy = Store("Pharmacy")
 stores.append(pharmacy)
-create_product(pharmacy, "Melatonin 5mg", "50 pills", 5)
-create_product(pharmacy, "Melatonin 10mg", "50 pills", 8)
+create_product(pharmacy,pharmacy.name, "Melatonin 5mg", "50 pills", 5)
+create_product(pharmacy,pharmacy.name, "Melatonin 10mg", "50 pills", 8)
+
